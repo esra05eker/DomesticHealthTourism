@@ -1,0 +1,68 @@
+﻿@model List<DHT.Entity.Entities.City>
+
+@{
+    ViewBag.Title = "Homepage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="card">
+
+        <div class="card-header bg-primary text-white">Make Appoinment</div>
+
+        <div class="card-body">
+
+            <div class="row">
+                <div class="col-md-6">
+                    <label>City</label>
+                    <select class="form-control" id="cmbCity">
+                        <option value="">--Select City--</option>
+                        @foreach (var city in Model)
+                        {
+                            <option value="@city.Id">@city.Name</option>
+                        }
+                    </select>
+                </div>
+
+                <div class="col-md-6">
+                    <label>District</label>
+                    <select class="form-control" id="cmbDistrict">
+                        <option value="">--Select District--</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <label>Hospital</label>
+                    <select class="form-control" id="cmbHospital">
+                        <option value="">--Select Hospital--</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label>Clinic</label>
+                    <select class="form-control" id="cmbClinic">
+                        <option value="">--Select Clinic--</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <label>Doctor</label>
+                    <select class="form-control" id="cmbDoctor">
+                        <option value="">--Select Doctor--</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label>Date</label>
+                    <input type="text" class="form-control datepicker" id="txtDate" />
+                </div>
+            </div>
+
+        </div>
+
+        <div class="card-footer"><button class="btn btn-primary float-right" id="btnSearch"><i class="fa fa-search"></i> Search</button></div>
+
+    </div>
+</div>

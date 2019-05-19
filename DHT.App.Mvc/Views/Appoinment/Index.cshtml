@@ -1,0 +1,46 @@
+﻿@model List<DHT.Entity.Entities.Appoinment>
+
+@{
+    ViewBag.Title = "My Appoinments";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>My Appoinments</h2>
+<div class="table-responsive">
+    <div class="table-responsive">
+        <table class="table table-light">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Doctor</th>
+                    <th>Hospital</th>
+                    <th>Clinic</th>
+                    <th>#</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var appoinment in Model)
+                {
+                    <tr>
+                        <td>@appoinment.AppointmentTime.ToString("dd-MM-yyyy")</td>
+                        <td>@appoinment.AppointmentTime.ToString("HH:mm")</td>
+                        <td>@appoinment.Doctor.Firstname</td>
+                        <td>@appoinment.Hospital.Name</td>
+                        <td>@appoinment.Doctor.HospitalClinic.Clinic.Name</td>
+                        <td>
+                            <div class="btn-group">
+
+                                @if (appoinment.AppointmentTime > DateTime.Now)
+                                {
+                                    <a class="btn btn-warning btnCancel" href="/Appoinment/Cancel/@appoinment.Id">Cancel</a>
+                                }
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,321 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{27FF3691-3212-4527-8EDB-C5B3F80F7F56}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>DHT.App.WinForm</RootNamespace>
+    <AssemblyName>DHT.App.WinForm</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppoinmentDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppoinmentDetailsForm.Designer.cs">
+      <DependentUpon>AppoinmentDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppoinmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppoinmentForm.Designer.cs">
+      <DependentUpon>AppoinmentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CityDistrictForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CityDistrictForm.Designer.cs">
+      <DependentUpon>CityDistrictForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClinicDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClinicDetailsForm.Designer.cs">
+      <DependentUpon>ClinicDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClinicForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClinicForm.Designer.cs">
+      <DependentUpon>ClinicForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoctorDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoctorDetailsForm.Designer.cs">
+      <DependentUpon>DoctorDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DoctorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoctorForm.Designer.cs">
+      <DependentUpon>DoctorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HospitalDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HospitalDetailsForm.Designer.cs">
+      <DependentUpon>HospitalDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HospitalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HospitalForm.Designer.cs">
+      <DependentUpon>HospitalForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PatientDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PatientDetailsForm.Designer.cs">
+      <DependentUpon>PatientDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PatientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PatientForm.Designer.cs">
+      <DependentUpon>PatientForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SysAdminDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SysAdminDetailsForm.Designer.cs">
+      <DependentUpon>SysAdminDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SysAdminForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SysAdminForm.Designer.cs">
+      <DependentUpon>SysAdminForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AppoinmentDetailsForm.resx">
+      <DependentUpon>AppoinmentDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppoinmentForm.resx">
+      <DependentUpon>AppoinmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CityDistrictForm.resx">
+      <DependentUpon>CityDistrictForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClinicDetailsForm.resx">
+      <DependentUpon>ClinicDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClinicForm.resx">
+      <DependentUpon>ClinicForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomForm.resx">
+      <DependentUpon>CustomForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DoctorDetailsForm.resx">
+      <DependentUpon>DoctorDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DoctorForm.resx">
+      <DependentUpon>DoctorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HospitalDetailsForm.resx">
+      <DependentUpon>HospitalDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HospitalForm.resx">
+      <DependentUpon>HospitalForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PatientDetailsForm.resx">
+      <DependentUpon>PatientDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PatientForm.resx">
+      <DependentUpon>PatientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SysAdminDetailsForm.resx">
+      <DependentUpon>SysAdminDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SysAdminForm.resx">
+      <DependentUpon>SysAdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\DHT.Entity.Entities.Appoinment.datasource" />
+    <None Include="Properties\DataSources\DHT.Entity.Entities.BaseEntity.datasource" />
+    <None Include="Properties\DataSources\DHT.Entity.Entities.City.datasource" />
+    <None Include="Properties\DataSources\DHT.Entity.Entities.Clinic.datasource" />
+    <None Include="Properties\DataSources\DHT.Entity.Entities.District.datasource" />
+    <None Include="Properties\DataSources\DHT.Entity.Entities.Doctor.datasource" />
+    <None Include="Properties\DataSources\DHT.Entity.Entities.Hospital.datasource" />
+    <None Include="Properties\DataSources\DHT.Entity.Entities.HospitalClinic.datasource" />
+    <None Include="Properties\DataSources\DHT.Entity.Entities.HospitalClinicExamination.datasource" />
+    <None Include="Properties\DataSources\DHT.Entity.Entities.Patient.datasource" />
+    <None Include="Properties\DataSources\DHT.Entity.Entities.SysAdmin.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\world.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ambulance.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\patient2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doctor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medical-history.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hospital.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bandage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clerk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\repeat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\repeat2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\success.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admin-login-png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DHT.BLL\DHT.BLL.csproj">
+      <Project>{67cb75ff-9c5e-4f90-b728-cea0dc553908}</Project>
+      <Name>DHT.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DHT.Entity\DHT.Entity.csproj">
+      <Project>{4512601d-2ca7-4a1b-a0db-baf7be17ef37}</Project>
+      <Name>DHT.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DHT.Tools\DHT.Tools.csproj">
+      <Project>{db5360e5-1cf7-4064-a8d9-e69dc1e05ace}</Project>
+      <Name>DHT.Tools</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - DomesticHealthTourism</title>
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap-datepicker.standalone.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/toastr.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+
+    <script>
+        var isLoggedIn = @(Session["user"] != null ? "true" : "false");
+    </script>
+</head>
+<body>
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">DomesticHealthTourism</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Home/HowItWorks"><i class="fa fa-question-circle-o"></i> How It Works</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Home/About"><i class="fa fa-info-circle"></i> About</a>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav">
+
+                @if (Session["user"] == null)
+                {
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Account/Register"><i class="fa fa-user-plus"></i> Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Account/Login"><i class="fa fa-sign-in"></i> Login</a>
+                    </li>
+                }
+                else
+                {
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Appoinment"><i class="fa fa-table"></i> MyAppoinments</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Account/MyProfile"><i class="fa fa-user"></i> Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Account/Logout"><i class="fa fa-sign-out"></i> Logout</a>
+                    </li>
+                }
+
+
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container-fluid pt-4 pb-5">
+
+        @if (TempData["AlertMessage"] != null)
+        {
+            <div class="alert alert-@TempData["AlertType"]" role="alert">
+                <i class="fa fa-@TempData["AlertIcon"] fa-2x"></i> @TempData["AlertMessage"]
+            </div>
+        }
+
+
+        @RenderBody()
+    </div>
+
+
+    <footer class="footer mt-auto pt-3 pb-2">
+        <p>Domestic Health Tourism</p>
+    </footer>
+
+    <script src="~/Scripts/jquery-3.0.0.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/bootstrap-datepicker.min.js"></script>
+    <script src="~/Scripts/bootbox.min.js"></script>
+    <script src="~/Scripts/toastr.min.js"></script>
+    <script src="~/Scripts/site.js"></script>
+</body>
+</html>

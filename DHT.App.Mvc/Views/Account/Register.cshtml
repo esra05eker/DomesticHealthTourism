@@ -1,0 +1,60 @@
+﻿@model DHT.Entity.Entities.Patient
+
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="card w-100">
+
+            <form method="post">
+                <div class="card-header bg-primary text-white">Register</div>
+
+                <div class="card-body my-3">
+                    <input type="hidden" name="Id" value="@Model.Id" />
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>T.C. Number</label>
+                            <input type="text" class="form-control" name="TcNo" maxlength="11" value="@Model.TcNo" required />
+                            <label>Email</label>
+                            <input type="email" class="form-control" name="Email" maxlength="255" value="@Model.Email" />
+                            <label>Fistname</label>
+                            <input type="text" class="form-control" name="Firstname" maxlength="100" value="@Model.Firstname" required />
+                            <label>Lastname</label>
+                            <input type="text" class="form-control" name="Lastname" maxlength="100" value="@Model.Lastname" required />
+                        </div>
+
+                        <div class="col-md-6">
+                            <label>Gender</label>
+                            <div class="clearfix"></div>
+                            <div class="form-check-inline">
+                                <input class="form-check-input" type="radio" name="Gender" id="gender1" value="1" @(Model.Gender == DHT.Entity.Enums.Gender.Female ? "checked" : "") required>
+                                <label class="form-check-label" for="gender1">Female</label>
+                            </div>
+                            <div class="form-check-inline">
+                                <input class="form-check-input" type="radio" name="Gender" id="gender2" value="2" @(Model.Gender == DHT.Entity.Enums.Gender.Male ? "checked" : "") required>
+                                <label class="form-check-label" for="gender2">Male</label>
+                            </div>
+                            <div class="clearfix mb-3"></div>
+                            <label>Phone</label>
+                            <input type="text" class="form-control" name="Phone" maxlength="15" value="@Model.Phone" />
+                            <label>Password</label>
+                            <input type="password" class="form-control" id="password1" name="Password" placeholder="(not changed)" required />
+                            <label>Re-Password</label>
+                            <input type="password" class="form-control" id="password2" name="RePassword" required />
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="card-footer">
+                    <button class="btn btn-primary btn-block px-5">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,86 @@
+﻿@model DHT.App.Mvc.Models.SearchViewModel
+@{
+
+    ViewBag.Title = "Search Appoinment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <div class="col-md-3">
+        <label>City</label>
+        <select class="form-control mb-3" id="cmbCity">
+            <option value="">--Select City--</option>
+        </select>
+
+        <label>District</label>
+        <select class="form-control mb-3" id="cmbDistrict">
+            <option value="">--Select District--</option>
+        </select>
+
+        <label>Hospital</label>
+        <select class="form-control mb-3" id="cmbHospital">
+            <option value="">--Select Hospital--</option>
+        </select>
+
+        <label>Clinic</label>
+        <select class="form-control mb-3" id="cmbClinic">
+            <option value="">--Select Clinic--</option>
+        </select>
+
+        <label>Doctor</label>
+        <select class="form-control mb-3" id="cmbDoctor">
+            <option value="">--Select Doctor--</option>
+        </select>
+
+        <label>Date</label>
+        <input type="text" class="form-control mb-3 datepicker" id="txtDate" />
+        <button class="btn btn-primary btn-block" id="btnSearch"><i class="fa fa-search"></i> Search</button>
+    </div>
+
+    <div class="col-md-9">
+        <div class="table-responsive">
+            <table class="table table-light">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Doctor</th>
+                        <th>Hospital</th>
+                        <th>Clinic</th>
+                        <th>#</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var appoinment in Model.AppoinmentsPairs)
+                    {
+                        <tr>
+                            <td>@appoinment.Value.AppointmentTime.ToString("dd-MM-yyyy")</td>
+                            <td>@appoinment.Value.AppointmentTime.ToString("HH:mm")</td>
+                            <td>@appoinment.Value.Doctor.Firstname</td>
+                            <td>@appoinment.Value.Hospital.Name</td>
+                            <td>@appoinment.Value.Doctor.HospitalClinic.Clinic.Name</td>
+                            <td>
+                                <div class="btn-group">
+
+                                    @if (appoinment.Value.Id > 0)
+                                    {
+                                        <button class="btn btn-danger">Not Suitable</button>
+                                    }
+                                    else
+                                    {
+                                        <button class="btn btn-success btnMakeAppoinment"
+                                                data-doctor-id="@appoinment.Value.DoctorId"
+                                                data-datetime="@appoinment.Value.AppointmentTime.ToString("yyyy-MM-dd HH:mm:ss")">
+                                            Make Appoinment
+                                        </button>
+                                    }
+
+                                   
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

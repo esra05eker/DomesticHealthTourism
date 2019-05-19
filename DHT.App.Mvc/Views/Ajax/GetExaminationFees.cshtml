@@ -1,0 +1,22 @@
+﻿@model List<DHT.Entity.Entities.HospitalClinicExamination>
+
+<div class="table-responsive">
+    <table class="table table-light">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Fee</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var examination in Model)
+            {
+                <tr>
+                    <td>@examination.Name</td>
+                    <td>@examination.Fee ₺</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
